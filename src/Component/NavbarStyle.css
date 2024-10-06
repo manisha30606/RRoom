@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700&family=Sofadi+One&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+nav {
+    padding:2rem;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.nav-data {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo h2 {
+    font-family: "Sofadi One", system-ui;
+    font-size: 1.5rem;
+}
+
+.nav-list {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.nav-list li {
+    padding: 0 .9rem;
+    list-style: none;
+    font-size: 1.1rem;
+    color: #000;
+    font-family: "Roboto", sans-serif;
+    cursor: pointer;
+}
+
+.search {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.search input {
+    border: none;
+    background-color: #e2e7e8;
+    color: #000;
+    padding: .6rem .8rem;
+    font-size: 1rem;
+    border-radius: 1.3rem;
+    display: none; 
+}
+
+.search.active input {
+    display: block; 
+}
+
+.search-icon {
+    margin-left: auto; 
+    font-size: 1.5rem;
+    padding: .2rem .5rem;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.login-btn, .signup-btn {
+    padding: .5rem 1.4rem;
+    font-size: 1.1rem;
+    cursor: pointer;
+    margin: 0 1rem;
+    border-radius: 1.3rem;
+    border: none;
+}
+
+.login-btn {
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #000;
+}
+
+.signup-btn {
+    background-color: #000;
+    color: #fff;
+}
+
+@media (max-width: 985px) {
+    .nav-list {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background-color: #fff;
+        width: 100%;
+        box-shadow: 0px 8px 16px rgba(0,0,0,0.1);
+        transform: translateY(-20px); 
+        opacity: 0; 
+        transition: transform 0.4s ease, opacity 0.4s ease; 
+    }
+.nav-list li{
+    padding: 1rem .8rem;
+}
+    .nav-list.active {
+        display: flex;
+        transform: translateY(0); 
+        opacity: 1;
+    }
+
+    .search{
+        margin-left: auto;
+    }
+
+    .search input {
+        display: none; 
+    }
+
+    .menu-icon {
+        display: block; 
+        font-size: 2rem;
+        cursor: pointer;
+    }
+
+    .logo h2 {
+        margin-left: auto;
+    }
+
+    .btns {
+        display: none; 
+    }
+    .nav-list .btns {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding: 1rem;
+        background-color: #f4f4f4;
+        align-items: center;
+       
+    }
+
+    .btns button {
+        margin-bottom: 1rem;
+        width: 60%;
+    
+    }
+}
+@media (min-width: 985px) {
+    .menu-icon {
+        display: none; 
+    }
+
+    .nav-list {
+        display: flex !important; 
+        flex-direction: row;
+        position: static;
+        box-shadow: none;
+        transform: none;
+        opacity: 1;
+    }
+
+    .search input {
+        display: block; 
+    }
+
+    .btns {
+        display: block; 
+    }
+}
