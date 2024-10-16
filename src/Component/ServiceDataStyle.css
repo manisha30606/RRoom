@@ -1,0 +1,159 @@
+.serData {
+    margin: 2rem 4rem;
+
+}
+
+.sub-data {
+    text-align: center;
+    padding: 6rem 0;
+    background: linear-gradient(rgba(50, 50, 50, 0.5), rgba(61, 61, 61, 0.5)), url('../assets//p11.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+}
+
+.sub-data h1 {
+    font-size: 4rem;
+    font-family: "Sofadi One", system-ui;
+}
+
+.sub-data p {
+    font-size: 1rem;
+    margin: .6rem 0;
+    font-family: "Roboto", sans-serif;
+}
+
+.sub-data button {
+    margin-top: 1rem;
+    padding: .6rem 2.5rem;
+    color: #1230AE;
+    background-color: #fff;
+    border: none;
+    cursor: pointer;
+    font-family: "Roboto", sans-serif;
+    font-size: 1.2rem;
+
+}
+
+.service-data-box-head {
+    text-align: center;
+    margin: 3rem 0;
+    color: #000;
+    font-size: 2rem;
+    letter-spacing: .2rem;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+}
+
+.service-data-box-head span {
+    color: #1230AE;
+}
+
+.service-data-box {
+    margin: 2rem auto;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}
+
+.service-box .box-img{
+    width: 40%;
+}
+.subdata1 {
+    display: flex;
+    flex-direction: row;
+    font-size: 1.2rem;
+    font-family: "Roboto", sans-serif;
+    padding: .5rem;
+    cursor: pointer;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.subdata1 p {
+    margin-right: .5rem;
+}
+
+/* .subdata1 div {
+    flex-grow: 1;
+} */
+
+.subdata2 {
+    margin: 1rem 0;
+    font-size: 1rem;
+    font-family: "Roboto", sans-serif;
+    padding: .5rem;
+}
+
+.service-box {
+    height: 250px;
+    padding: 1rem;
+    margin: 1rem 1.5rem;
+    border-radius: .5rem;
+    display: flex;
+    flex-direction: row;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.boxes-data {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0 1rem;
+    width: 60%;
+    justify-content: center;
+
+}
+
+.img {
+    width: 100%;
+    height: 100%;
+}
+
+.subdata-btn button {
+    padding: .6rem 2rem;
+    color: #fff;
+    background-color: #1230AE;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    margin: 0 .5rem;
+}
+
+
+
+
+
+
+@media screen and (max-width:1036px) {
+
+    .service-data-box {
+        margin: 1rem auto;
+    }
+    .serData{
+        margin: 2rem 1rem;
+    }
+}
+@media screen and (max-width:670px){
+.service-data-box {
+    width: 98%;
+}
+.service-box .box-img{
+    display: none;
+}
+.service-box{
+    padding: .3rem;
+}
+.boxes-data{
+    width: 99%;
+}
+.sub-data h1 {
+    font-size: 2rem;
+}
+.service-data-box-head {
+    font-size: 1.4rem;
+}
+.subdata-btn button {
+    padding: .6rem 1rem;
+}
+}

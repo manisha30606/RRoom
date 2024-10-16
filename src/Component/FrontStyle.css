@@ -1,44 +1,53 @@
 .home-page {
+    width: 100%;
+
+}
+.home-service{
+    width: 90%;
     margin: 2rem auto;
-    width: 95%;
-    display: flex;
-    flex-direction: column;
-
-
+}
+.btn button{
+    padding: .6rem 2.5rem;
+    margin-top: 1.5rem;
+    color: #C68FE6;
+    border:  2px solid #C68FE6;
+    cursor: pointer;
+    font-family: "Roboto", sans-serif;
+    font-size: 1rem;
+    background: transparent;
+}
+.btn button:hover{
+    background-color: #C68FE6;
+    color: #fff;
+    
 }
 
 .home {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    /* background: linear-gradient(135deg, #758694  50%, #fff 50%);
-    height: 80vh; 
-    width: 100%;    */
+ text-align: center;
+ padding: 8% 5%;
+ background: linear-gradient(rgba(14, 14, 14, 0.5), rgba(14, 14, 14, 0.5)), url('../assets//p16.jpg');
+ background-size: cover;
+ background-position: center;
+ color: #fff;
 }
+/* 
+svg {
+    position: absolute;
+    top: 15%;
+} */
 
-.home-left {
-    width: 50%;
-    padding: 2rem;
-
-}
-
-.home-right {
-    width: 50%;
-
-}
 
 .head1 {
     font-size: 2rem;
     letter-spacing: .2rem;
-    color: #000;
+    color: #fff;
     margin: .5rem 0;
     font-family: "Roboto", sans-serif;
 }
 
 .head2 {
     font-size: 3.5rem;
-    color: #405D72;
+    color: #C68FE6;
     font-family: "Roboto", sans-serif;
     letter-spacing: 1rem;
     font-weight: 800;
@@ -46,7 +55,7 @@
 
 .head3 {
     font-size: 1.5rem;
-    color: #758694;
+    color: #fff;
     letter-spacing: .2rem;
     margin: 1rem 0;
     font-family: "Roboto", sans-serif;
@@ -54,7 +63,7 @@
 
 .para {
     font-size: .9rem;
-    color: #758694;
+    color: #c7c7c7;
     font-family: "Roboto", sans-serif;
 
 }
@@ -65,13 +74,27 @@
 }
 
 .home-boxes {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 2 columns */
+    grid-template-rows: repeat(3, auto);  /* 4 rows */
+    gap: 2rem; /* Gap between rows and columns */
     margin: 2rem 0;
+    text-align: center;
+    align-items: center;
 }
 
+.box {
+    margin: 0 1.3rem;
+    border: 1px solid #ddd; 
+    padding: 1rem;
+    border-radius: 8px;
+    transition: transform 0.3s ease; 
+    cursor: pointer;
+}
+
+.box:hover {
+    transform: scale(1.05); /* Optional: enlarges box slightly on hover */
+}
 .box-head {
     text-align: center;
     margin: 2rem 0;
@@ -79,22 +102,20 @@
 
 .box-head h2 {
     font-size: 2.3rem;
-    color: #405D72;
+    color: #1230AE;
     letter-spacing: .1rem;
     text-transform: uppercase;
     font-family: "Roboto", sans-serif;
 }
 
-.box {
-    /* width: 30%; */
-    margin: 0 1.3rem;
-
-}
 
 .box img {
-    width: 100%;
-    height: 100%;
+    width: 100%;       
+    height: 350px;   
+    object-fit: cover; 
+    border-radius: 10px;
 }
+
 
 .box-data {
     display: flex;
@@ -106,30 +127,151 @@
     display: flex;
     flex-direction: row;
     cursor: pointer;
+    color: #000;
 }
 
 .box-data-icons h4{
-    margin: 0 .4rem;
-    border: 1px solid #000;
-    border-radius: 50%;
-    padding: .2rem .3rem;
+    margin: .5rem .4rem;
 }
 .box-data h4 {
     font-family: "Roboto", sans-serif;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
 }
 
+
+/* Overlay that appears when book-details is open */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    /* Dark semi-transparent background */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+    z-index: 999;
+    /* Ensure it's below the book-details */
+}
+
+.overlay.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Book-details container */
+.book-details {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    background-color: #fff;
+    color: #000;
+    padding: 2rem;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    opacity: 0;
+    z-index: 1000;
+    /* Above the overlay */
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
+    /* Add shadow to the box */
+}
+
+.book-details.open {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+}
+
+.book-details h4 {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: #000;
+    /* Adjust color if needed */
+    background: none;
+    /* Remove any default background */
+    border: none;
+    /* Remove any default border */
+}
+
+.book-details .detail-box {
+    padding: .5rem;
+}
+
+.detail-box-head {
+    text-align: center;
+}
+
+.detail-box-head h1 {
+    color: #1230AE;
+    font-family: "Roboto", sans-serif;
+}
+.detail-box-data{
+    display:flex;
+    flex-direction: column;
+    padding: .5rem;
+}
+
+.detail-box-subdata{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1.5rem;
+    cursor: pointer;
+}
+
+.detail-box-subdata img{
+    width: 20%;
+    height: 10%;
+}
+
+.detail-box-subdata h3{
+    font-family: "Roboto", sans-serif;
+    color: #000;
+    margin-left: 1rem;
+}
 @media screen and (max-width:850px) {
     .home {
         flex-direction: column-reverse;
+        text-align: center;
     }
 
     .home-left,
     .home-right {
         width: 97%;
     }
-    .home-boxes{
-        flex-direction: column;
+    .home-boxes {
+       
+        grid-template-columns: repeat(2, 1fr); 
+        grid-template-rows: repeat(4, auto);
     }
 
+}
+
+@media screen and (max-width:1030px) {
+    .home-boxes{
+        gap: .5rem;
+    }
+    .box-data h4{
+        font-size: .9rem;
+    }
+    .head1 {
+        font-size: 1.6rem;
+    }
+    .head2 {
+        font-size: 2.5rem;
+    }
+    .para {
+        font-size: .7rem;
+    }
+}
+
+@media screen and (max-width:515px) {
+    .home-boxes{
+        grid-template-columns: repeat(1, 1fr); 
+        grid-template-rows: repeat(6, auto);
+    }
 }

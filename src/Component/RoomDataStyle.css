@@ -1,0 +1,89 @@
+.room-data {
+    margin: 2rem;
+    color: #fff;
+    border-radius: .3rem;
+}
+
+.room-data h1 {
+    font-size: 2.5rem;
+    margin: 1rem;
+    font-family: "Roboto", sans-serif;
+    color: #1230AE;
+}
+
+.room-data-detail {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+}
+
+.room-data-img {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.room-data-img img {
+    width: 30%;
+    height: 20%;
+    margin:  1rem;
+}
+.room-data-locate{
+    color: #858585;
+    margin: 1.5rem 1rem;
+    font-family: "Sofadi One", system-ui;
+}
+
+.room-data-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin: 1rem 0;
+}
+.room-data-btn button{
+    color:#1230AE;
+    font-size: 1.4rem;
+    margin: 1rem;
+    padding: .6rem 2.5rem;
+    border: 1px solid #1230AE;
+    background: none;
+    cursor: pointer;
+}
+.room-data-btn button:hover{
+    background-color:#1230AE;
+    color: #fff;
+   
+}
+
+.data-info1,
+.data-info2 {
+    border: 1px solid #000;
+    border-radius: .3rem;
+    margin: 2rem 1.5rem;
+    padding: 1rem;
+}
+.data-info1 , .data-info2 p{
+    color: #000;
+}
+
+@media screen and (max-width:700px){
+    
+.room-data-info {
+    flex-direction: column;
+}
+.room-data h1 {
+    font-size: 1.8rem;
+}
+.room-data-img {
+    flex-wrap: wrap;
+}
+.room-data-img img {
+    width: 70%;
+    height: 30%;
+}
+.room-data {
+    margin: 1rem;
+}
+}

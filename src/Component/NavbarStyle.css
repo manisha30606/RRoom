@@ -4,6 +4,10 @@
     margin: 0;
     padding: 0;
 }
+a{
+    text-decoration: none;
+ 
+}
 nav {
     padding:2rem;
     position: relative;
@@ -20,6 +24,7 @@ nav {
 .logo h2 {
     font-family: "Sofadi One", system-ui;
     font-size: 1.5rem;
+    color: #1230AE;
 }
 
 .nav-list {
@@ -32,7 +37,7 @@ nav {
     padding: 0 .9rem;
     list-style: none;
     font-size: 1.1rem;
-    color: #000;
+    color: #1230AE;
     font-family: "Roboto", sans-serif;
     cursor: pointer;
 }
@@ -45,17 +50,14 @@ nav {
 
 .search input {
     border: none;
-    background-color: #e2e7e8;
-    color: #000;
+    background-color: #FFF7F7;
+    color: #1230AE;
     padding: .6rem .8rem;
     font-size: 1rem;
     border-radius: 1.3rem;
-    display: none; 
-}
-
-.search.active input {
     display: block; 
 }
+
 
 .search-icon {
     margin-left: auto; 
@@ -63,6 +65,7 @@ nav {
     padding: .2rem .5rem;
     font-weight: 800;
     cursor: pointer;
+    color: #1230AE;
 }
 
 .login-btn, .signup-btn {
@@ -75,14 +78,14 @@ nav {
 }
 
 .login-btn {
-    background-color: #fff;
-    color: #000;
-    border: 1px solid #000;
+    background-color: #FFF7F7;
+    color: #1230AE;
+    border: 1px solid #1230AE;
 }
 
 .signup-btn {
-    background-color: #000;
-    color: #fff;
+    background-color: #1230AE;
+    color: #FFF7F7;
 }
 
 @media (max-width: 985px) {
@@ -92,7 +95,7 @@ nav {
         position: absolute;
         top: 100%;
         right: 0;
-        background-color: #fff;
+        background-color: #FFF7F7;
         width: 100%;
         box-shadow: 0px 8px 16px rgba(0,0,0,0.1);
         transform: translateY(-20px); 
@@ -108,13 +111,9 @@ nav {
         opacity: 1;
     }
 
-    .search{
-        margin-left: auto;
-    }
+  
 
-    .search input {
-        display: none; 
-    }
+ 
 
     .menu-icon {
         display: block; 
@@ -124,6 +123,7 @@ nav {
 
     .logo h2 {
         margin-left: auto;
+        
     }
 
     .btns {
@@ -134,14 +134,13 @@ nav {
         flex-direction: column;
         width: 100%;
         padding: 1rem;
-        background-color: #f4f4f4;
         align-items: center;
        
     }
 
     .btns button {
         margin-bottom: 1rem;
-        width: 60%;
+        width: 90%;
     
     }
 }
@@ -165,5 +164,12 @@ nav {
 
     .btns {
         display: block; 
+    }
+}
+
+@media screen and (max-width:486px) {
+    .search input{
+        width: 70%;
+        margin-left: 1rem;
     }
 }
